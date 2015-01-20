@@ -1,0 +1,592 @@
+/*Move body down 50px from header for bootstrap 3*/
+body {
+	padding-top: 90px;
+  padding-bottom: 20px;  
+}
+/*Footer*/
+footer a:hover {
+	text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: none;
+}
+
+/*Link Styles*/
+.primary {
+  color: #5F9EA0;
+}
+
+/*Select Styles to overide Grails default*/
+select {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.428571429;
+  color: #7a7a7a;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/*Fraternity Select Styles*/
+.fraternity-select {
+  width: 200px;
+}
+/*Home Page Styles*/
+.home-actions {
+  margin-bottom: 15px;
+}
+/*Tab Styles*/
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus
+  {
+  color: #555555;
+  background-color: #ffffff;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #5f9ea0;
+  cursor: default;
+}
+
+.nav>li>a:hover,.nav>li>a:focus {
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.nav-tabs>li>a:hover {
+  border-color: #fff #fff #5f9ea0;
+}
+/*Tab Styles*/
+
+.clear {
+  clear: both;
+}
+
+    /*File Input Bootstrap Styles*/
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 999px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+    /*Upload Photo Form Styles*/
+    .upload-profile-photo {
+      margin-bottom: 15px;
+    }
+
+/*MOBILE*/
+@media ( max-width : 480px) {
+  .btn-mobile {
+    width: 100%;
+  }
+  .icon-mobile-breadcrumb {
+    font-size: 2em;
+  }
+  .mobile-breadcrumbs {
+    margin-top: 15px;
+  }
+}
+
+/*Edit Container Icon Styles*/
+.edit-container {
+  margin-top: 15px;
+  margin-right: 5px;
+  color: #FFF;
+}
+
+/*Font Awesome Size Styles*/
+.fa-8x {
+  font-size: 8em;
+  width: 150px;
+  height: 150px;
+}
+/*Family List Styles*/
+.family-list {
+  padding: 10px;
+}
+
+.family-list-style li {
+  width: 100px;
+}
+
+/*Officer List Styles*/
+.officer-list {
+  padding: 10px;
+}
+
+.officer-list-style li {
+  width: 100px;
+}
+
+/*App List Styles*/
+
+.app-list {
+  padding: 10px;
+}
+.app-list-style li {
+  width: 100px;
+}
+
+/*Officer / Family Images*/
+.small-image {
+  width: 90px;
+  height: 90px;
+}
+
+/*Modal Images*/
+.modal-profile-image {
+  margin-right: 10px;
+}
+/*Modal Styles*/
+.modal-dialog {
+  
+}
+.modal-header {
+  background: url("../../images/global/banners/banner.png");
+  height: 47px;
+  padding-top: 9px;
+  margin-left: -5px;
+  border: 0px;
+}
+.modal-title {
+  color: #FFF;      
+}
+.close {
+  color: #FFF;
+  opacity: 1;
+  font-weight: normal;
+}
+/*Rush Preview Modal*/
+.rush-preview-image {
+  margin-right: 10px;
+}
+.rush-preview-section {
+  height: 150px;
+}
+
+/*Comment Styles*/
+.media-object {
+  width: 60px;
+  height: 60px;
+}
+/****************
+/***********************************
+Jquery Validate Error Message styles
+***********************************/
+.error {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  color: #FF0000;
+  font-weight: normal;
+}
+
+/*Form Helper Text*/
+.help-block {
+  margin-top: 15px;
+}
+
+/*Twitter Type Ahead Styles*/
+.twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+    display: block;
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.428571429;
+}
+
+.tt-dropdown-menu {
+  min-width: 160px;
+  margin-top: 2px;
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.tt-suggestion {
+  display: block;
+  padding: 3px 20px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #0081c2;
+  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+}
+
+.tt-suggestion.tt-is-under-cursor a {
+  color: #fff;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+/*****************
+Create Profile Page
+******************/
+.create-profile-section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  margin-bottom: 15px;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+}
+.create-profile-image {
+  margin-bottom: 15px;
+}
+
+/*****************
+/*user image dimensions*/
+.image-resize {
+	width: 150px;
+    height: 150px;
+}
+/*Fraternity Rush Image Styles*/
+.rush-fraternities img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.rush-fraternities {
+  padding: 5px;
+}
+/*Profile Image Styles*/
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.profile-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin-left: 5px;
+}
+
+.generic-user-image-sm {
+  margin-left: 5px;
+  width: 100px;
+  height: 100px;  
+  font-size: 6em;
+  padding-left: 11px;  
+  float: left !important;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+}
+/*Edit Profile Image Styles*/
+.change-profile-image {
+  margin-top: 15px;
+}
+
+/*Listing Page Styles*/
+.listing p {
+	margin: 0 0 15px;
+}
+#fraternity-categories {
+	margin-bottom: 25px;
+}
+#pendingMembers {
+  margin-bottom: 25px;
+}
+.listing-title {
+	font-size: 28px;    
+	margin-top: 0px;  
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;	
+}
+.listing-logo {
+	margin-right: 10px;
+}
+.listing-response {	
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;	
+}
+/*highlight color for the site*/
+.highlight {
+	color: #333;	
+    }
+/*Main Container Styles*/
+.main {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+	height: 100%;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	background: #FFF;
+}
+/*Container Banner Title Styles*/
+.banner-title {
+	float: left;
+	margin-top: 14px;
+	margin-left: 21px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+/*Container Banner Styles*/
+.banner {
+	height: 47px;
+	background: url("../../images/global/banners/banner.png");
+	margin-left: -7px;
+}
+/*Photo App Styles*/
+.photo-background {
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+}
+/*Main Container Styles*/
+.main-container {
+  margin-bottom: 25px;
+}
+/*Info Styles*/
+.info {
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 110px;
+}
+.module {
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+}
+/*********************
+List item background
+********************/
+.list-background {
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+/*********************
+Center the app store pills
+**********************/
+.list-filters >li {
+  float: none;
+  display: inline-block;
+  *display: inline; /* ie7 fix */
+  zoom: 1; /* hasLayout ie7 trigger */
+}
+
+.list-filters {
+  text-align: center;
+}
+
+/***************************************************
+ List Icons
+***************************************************/
+.social-feedback {
+  color: #fff;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.app-large-icon {
+  font-size: 5em;
+}
+/***************************************************
+List Activate, Deactivate, Settings & Overlay Options
+***************************************************/
+.list-options {
+  position: absolute;
+    top: 8px;
+  visibility: hidden;
+  z-index: 101;
+}
+
+.list-container:hover .hover-mask {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0.7
+}
+
+.list-container:hover .list-options {
+  position: absolute;
+    top: 55px;
+    right: 20px;
+  visibility: visible;
+  z-index: 101;
+}
+/***************************************************
+Tab content styles
+***************************************************/
+.tab-information {
+  margin-top: 25px;
+  margin-bottom: 22px;
+}
+/***************************************************
+Notification Dropdown Styles 
+***************************************************/
+.navbar-inverse .notification-dropdown .count {
+  position: absolute;
+  top: 1px;
+  left: 58%;
+  background: #5f9ea0;
+  padding: 0px 5px;
+  border-radius: 30px;
+  color: #fff;
+  line-height: 16px;
+  z-index: 9999;
+  text-align: center;
+  font-size: 11px;
+}    
+
+/*NOTIFICATIONS STYLES*/
+.navbar-inverse .pop-dialog .notifications {
+  width: 330px;
+  margin: 10px -10px 0px -10px;
+}
+.navbar-inverse .pop-dialog .notifications h3 {
+  font-size: 13px;
+  color: #7a7a7a;
+  font-weight: bold;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.navbar-inverse .pop-dialog .notifications .item {
+  display: block;
+  padding: 10px 0px 8px 20px;
+  border-top: 1px solid #e7e8ea;
+  color: #7a7a7a;
+  text-decoration: none;
+  padding-left: 50px;
+  position: relative;
+  transition: all .25s linear;
+  -moz-transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+}
+.navbar-inverse .pop-dialog .notifications .item:hover {
+  background: #5f9ea0;
+  color: #fff;
+}
+.navbar-inverse .pop-dialog .notifications .item:hover > i {
+  color: #fff;
+}
+.navbar-inverse .pop-dialog .notifications .item > i {
+  color: #5f9ea0;
+  position: absolute;
+  left: 19px;
+  font-size: 18px;
+}
+.navbar-inverse .pop-dialog .notifications .item > i.icon-user {
+  left: 18px;
+}
+.navbar-inverse .pop-dialog .notifications .item .time {
+  display: block;
+  color: #5f9ea0;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 11px;
+  min-width: 60px;
+  margin-right: 5px;
+}
+.navbar-inverse .pop-dialog .notifications .item:hover .time {
+  color: #fff;
+}
+.navbar-inverse .pop-dialog .notifications .item .time i {
+  font-size: 13px;
+  color: #7a7a7a;
+  margin-right: 1px;
+}
+.navbar-inverse .pop-dialog .notifications .item:hover .time > i {
+  color: #fff;
+}
+
+.navbar-inverse .pop-dialog {
+position: absolute;
+right: -10px;
+top: 65px;
+display: none;
+}
+.navbar-inverse .pop-dialog.is-visible {
+display: block;
+-webkit-animation: reveal .2s ease-out;
+-moz-animation: reveal .2s ease-out;
+animation: reveal .2s ease-out;
+}
+
+.pop-dialog {
+z-index: 10000;
+display: inline-block;
+}
+/***************************************************
+Mobile Styles
+***************************************************/
+
+/*Mobile Buttons*/
+@media ( max-width : 480px) {
+  /*Mobile Buttons*/
+  .btn-mobile {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  /*Mobile Icons*/
+  .icon-mobile-breadcrumb {
+    font-size: 2em;
+  }
+  /*Mobile Acct Registration Breadcrumbs*/
+  .mobile-breadcrumbs {
+    margin-top: 15px;
+  }
+}
+
