@@ -14,8 +14,10 @@
     </div>
     <sec:ifLoggedIn>
       <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">              
-          <li><g:link controller="frat" action="list"><i class="fa fa-university fa-2x"></i></g:link></li>
+        <ul class="nav navbar-nav navbar-right">   
+          <g:if test="${userProfileInstance?.isProfileSetup}">         
+          	<li><g:link controller="frat" action="list"><i class="fa fa-university fa-2x"></i></g:link></li>
+          </g:if>
           <li><g:link controller="userProfile"><i class="fa fa-user fa-2x"></i></g:link></li>
           <%--g:hasAFrat>                    
             <g:set var="user" value="${User.findByUsername(sec.loggedInUserInfo(field:'username'))}"/>

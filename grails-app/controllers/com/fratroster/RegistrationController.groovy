@@ -52,7 +52,7 @@ class RegistrationController {
 			if(college != null){
 				def fratList = [
 					frats: college.frats.collect{
-						Frat c -> [fratName: c.fratName]
+						Frat c -> [fratName: c.fratName, id: c.id]
 					}
 				]
 				if (fratList!= null) {

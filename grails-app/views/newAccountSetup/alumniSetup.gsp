@@ -127,7 +127,7 @@
 	    			fratListObj.removeChild(fratListObj.firstChild);
 	    		}
 	    		for(i=0; i<json.frats.length; i++){
-	    			fratListObj.options[i]=new Option(json.frats[i].fratName, json.frats[i].fratName);
+	    			fratListObj.options[i]=new Option(json.frats[i].fratName, json.frats[i].id);
 	    		}
 	    	},
 	    		

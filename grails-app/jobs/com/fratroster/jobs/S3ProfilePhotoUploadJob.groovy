@@ -11,7 +11,10 @@ import com.fratroster.constants.AmazonS3Constants
 import com.fratroster.jobqueues.ProfileImageUpload
 import com.fratroster.user.User
 
-class S3ProfilePhotoUploadJob  {
+public class S3ProfilePhotoUploadJob  {
+	
+	def grailsApplication
+	
 	static triggers = {
 		cron name: 's3ProfilePhotoUploadJob', cronExpression: "2 0 * * * ?"
 	}
@@ -24,7 +27,7 @@ class S3ProfilePhotoUploadJob  {
    
 	def execute() {
 		log.info("Running S3 profile photo sync.")
-		RestS3Service s3 = new RestS3Service(new AWSCredentials(AmazonS3Constants.AWS_ACCESS_KEY, AmazonS3Constants.AWS_SECRET_ACCESS_KEY))
+		RestS3Service s3 = new RestS3Service(new AWSCredentials(grailsApplication.config.aws.accesskey, grailsApplication.config.aws.secretkey))
 		S3Bucket profilePictureBucket = s3.getOrCreateBucket(AmazonS3Constants.PROFILE_PICTURE_BUCKET_PATH, S3Bucket.LOCATION_US)
 		profilePictureBucket.setAcl(AccessControlList.REST_CANNED_PUBLIC_READ)
 

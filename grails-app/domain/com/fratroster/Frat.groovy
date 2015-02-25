@@ -45,5 +45,5 @@ class Frat {
 	}
 	
 	static belongsTo = [college: College]
-	static hasMany = [members: FratMember, pendingRushs: PendingRush, pendingMembers: PendingMember, apps: FratApp]
+	static hasMany = [members: FratMember, pendingRushs: PendingRush, pendingAlumnis: PendingAlumni, pendingMembers: PendingMember, apps: FratApp]
 }

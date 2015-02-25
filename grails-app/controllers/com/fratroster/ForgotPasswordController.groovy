@@ -2,6 +2,7 @@ package com.fratroster
 
 import com.fratroster.user.User
 
+
 class ForgotPasswordController {
 
 	def messageSource
@@ -14,8 +15,10 @@ class ForgotPasswordController {
 	
 	def submitForgotPassword() {
 		if (params.user_email != null && !params.user_email.isEmpty()){
+			
 			def username = (params.user_email).toString()
 			def currUser = User.findByUsername(username)
+			
 			if(currUser != null){
 
 				def tempPassword = commonService.generateNewPassword()
