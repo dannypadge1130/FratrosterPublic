@@ -36,7 +36,7 @@ class UserService {
 		if(user.save()) {
 			defineUserRole(user)
 		}
-		emailService.newRegistrationPasswordEmail(user, tempPassword)
+		emailService.newRegistrationPasswordEmail(user.username, tempPassword)
 		return user
 	}
 	

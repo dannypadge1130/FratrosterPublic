@@ -17,7 +17,7 @@ class EmailService {
 		def emailSubject = messageSource.getMessage("NEW_REGISTRATION_EMAIL", null, LCH.getLocale())
 		Promise p = task {
 			mailService.sendMail {
-				to "dan.padgett1@gmail.com"
+				to userEmail
 				subject emailSubject
 				html(view:"/emails/newUser", model:[name:userEmail, password:tempPassword]) 
 			}
@@ -34,7 +34,7 @@ class EmailService {
 		def emailSubject = messageSource.getMessage("VERIFY_EDU_EMAIL", null, LCH.getLocale())
 		Promise p = task {
 			mailService.sendMail {
-				to "dan.padgett1@gmail.com"
+				to userEmail
 				subject emailSubject
 				html(view:"/emails/eduPinEmail", model:[name:userEmail, pin:pin])
 			}
@@ -51,7 +51,7 @@ class EmailService {
 		def emailSubject = messageSource.getMessage("FORGOT_PASSWORD_EMAIL", null, LCH.getLocale())
 		Promise p = task {
 			mailService.sendMail {
-				to "dan.padgett1@gmail.com"
+				to userEmail
 				subject emailSubject
 				html(view:"/emails/forgotPassword", model:[name:userEmail, password:tempPassword])
 			}
@@ -68,7 +68,7 @@ class EmailService {
 		def emailSubject = messageSource.getMessage("REQUEST_DENIED_EMAIL", null, LCH.getLocale())
 		Promise p = task {	
 			mailService.sendMail {
-				to "dan.padgett1@gmail.com"
+				to userEmail
 				subject emailSubject
 				html(view:"/emails/denyAlumniEmail", model:[name:userEmail, fratname:fratname])
 			}	
@@ -85,7 +85,7 @@ class EmailService {
 	def brotherAcceptance(userEmail, fratname, approved){
 		Promise p = task {
 			mailService.sendMail {
-				to "dan.padgett1@gmail.com"
+				to userEmail
 				if(approved) {
 					subject messageSource.getMessage("REQUEST_ACCEPTED_EMAIL", null, LCH.getLocale())
 				} else {
@@ -106,7 +106,7 @@ class EmailService {
 	def rushAcceptance(userEmail, fratname, approved){
 		Promise p = task {
 			mailService.sendMail {
-				to "dan.padgett1@gmail.com"
+				to userEmail
 				if(approved) {
 					subject messageSource.getMessage("REQUEST_ACCEPTED_EMAIL", null, LCH.getLocale())
 				} else {

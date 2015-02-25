@@ -5,6 +5,8 @@ import com.fratroster.user.User
 class ForgotPasswordController {
 
 	def messageSource
+	def commonService
+	def emailService
 	
     def index() {
 		render(view: "forgotpassword")
@@ -15,7 +17,11 @@ class ForgotPasswordController {
 			def username = (params.user_email).toString()
 			def currUser = User.findByUsername(username)
 			if(currUser != null){
-				//TODO: call forgot password email
+
+				def tempPassword = commonService.generateNewPassword()
+				currUser.password = tempPassword
+				emailService.forgotPassword(currUser.username, tempPassword)
+				
 				render(view: "requestSuccessful")
 			} else {
 				render(view: "forgotpassword", model: [errorMessage: message(code:"forgotpassword.missingemail")])

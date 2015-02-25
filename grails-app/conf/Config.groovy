@@ -45,65 +45,7 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
-environments {
-    development {
-		grails.plugins.springsecurity.portMapper.httpPort = 8080
-		grails.plugins.springsecurity.portMapper.httpsPort = 8443
-        grails.logging.jul.usebridge = true
-		grails.serverURL = "http://localhost:8080/${appName}"
-		grails.plugins.springsecurity.facebook.appId="APP_ID"
-		grails.plugins.springsecurity.facebook.secret="SECRET_ID"
-		
-		grails.mail.host = "smtp.gmail.com"
-		grails.mail.port = 465
-		grails.mail.username = "fratroster@fratroster.com"
-		grails.mail.password = "PASSWORD"
-		grails.mail.default.from="support@fratroster.com"
-		grails.mail.props = ["mail.smtp.auth":"true", "mail.smtp.socketFactory.port":"465",
-					   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
-					   "mail.smtp.socketFactory.fallback":"false"]
-    }
-	
-	test {
-		grails.logging.jul.usebridge = false
-		grails.serverURL = "http://www.fratroster.com"
-		grails.plugins.springsecurity.facebook.appId="APP_ID"
-		grails.plugins.springsecurity.facebook.secret="SECRET_ID"
-		
-		grails.plugin.databasemigration.dbDocController.enabled = true
-		grails.plugin.databasemigration.updateOnStart = true
-		grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
-		
-		grails.mail.host = "smtp.gmail.com"
-		grails.mail.port = 465
-		grails.mail.username = "fratroster@fratroster.com"
-		grails.mail.password = "PASSWORD"
-		grails.mail.default.from="support@fratroster.com"
-		grails.mail.props = ["mail.smtp.auth":"true", "mail.smtp.socketFactory.port":"465",
-					   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
-					   "mail.smtp.socketFactory.fallback":"false"]
-	}
-	
-    production {
-        grails.logging.jul.usebridge = false
-        grails.serverURL = "http://www.fratroster.com"
-		grails.plugins.springsecurity.facebook.appId="APP_ID"
-		grails.plugins.springsecurity.facebook.secret="SECRET_ID"
-		
-		grails.plugin.databasemigration.dbDocController.enabled = true
-		grails.plugin.databasemigration.updateOnStart = true
-		grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
-		
-		grails.mail.host = "smtp.gmail.com"
-		grails.mail.port = 465
-		grails.mail.username = "fratroster1@gmail.com"
-		grails.mail.password = "PASSWORD"
-		grails.mail.default.from="support@fratroster.com"
-		grails.mail.props = ["mail.smtp.auth":"true", "mail.smtp.socketFactory.port":"465",
-					   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
-					   "mail.smtp.socketFactory.fallback":"false"]
-    }
-}
+grails.config.locations = ["file:${userHome}/.grails/${grails.util.Environment.current.name}-config.groovy"]
 
 // log4j configuration
 log4j = {
