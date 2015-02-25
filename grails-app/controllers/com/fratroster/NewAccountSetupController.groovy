@@ -176,6 +176,11 @@ class NewAccountSetupController {
 		if(params.selectFraternity != null && params.selectFraternity != "") {
 			def fratId = Long.parseLong(params.selectFraternity)
 			pAlumni = alumniService.createPendingAlumni(currUser.id, fratId)
+			
+			//TODO: Need to move this to a better location
+			currUser.college = pAlumni.alumFrat.college
+			currUser.save(flush:true)
+			
 		} else {
 			pAlumni.errors.reject("fraternity.id.blank", "")
 		}
