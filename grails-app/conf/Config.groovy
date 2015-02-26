@@ -3,6 +3,7 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
+
 grails.mime.types = [
     all:           '*/*',
     atom:          'application/atom+xml',
@@ -45,11 +46,25 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
-grails.config.locations = ["file:${userHome}/.grails/${grails.util.Environment.current.name}-config.groovy"]
+
+environments {
+	
+	development {
+		grails.config.locations = ["file:${userHome}/fratroster/dev-config.groovy"]
+	}
+	
+	test {
+		grails.config.locations = ["file:${userHome}/fratroster/test-config.groovy"]
+	}
+	
+	production {
+		grails.config.locations = ["file:${userHome}/fratroster/prod-config.groovy"]
+	}
+	
+}
 
 // log4j configuration
 log4j = {
-	debug  'grails.app.jobs'
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -85,3 +100,26 @@ grails.plugin.springsecurity.secureChannel.definition = [
  ]
 
 grails.views.javascript.library="jquery"
+// Uncomment and edit the following lines to start using Grails encoding & escaping improvements
+
+/* remove this line 
+// GSP settings
+grails {
+    views {
+        gsp {
+            encoding = 'UTF-8'
+            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
+            codecs {
+                expression = 'html' // escapes values inside null
+                scriptlet = 'none' // escapes output from scriptlets in GSPs
+                taglib = 'none' // escapes output from taglibs
+                staticparts = 'none' // escapes output from static template parts
+            }
+        }
+        // escapes all not-encoded output at final stage of outputting
+        filteringCodecForContentType {
+            //'text/html' = 'html'
+        }
+    }
+}
+remove this line */

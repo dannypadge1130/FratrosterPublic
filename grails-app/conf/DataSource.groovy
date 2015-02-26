@@ -14,6 +14,17 @@ environments {
             password = ""
         }
 	}
+	
+	test {
+		dataSource {
+			dbCreate = ""
+			driverClassName = ""
+			url = ""
+			username = ""
+			password = ""
+		}
+	}
+	
 	production {
         dataSource {
             dbCreate = ""

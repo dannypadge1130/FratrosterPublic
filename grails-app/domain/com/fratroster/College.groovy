@@ -1,6 +1,5 @@
 package com.fratroster
 
-
 class College {
 
 	Date dateCreated
