@@ -29,8 +29,6 @@ import com.fratroster.user.UserRole
 
 class BootStrap {
 	
-		def grailsApplication
-	
        def static final String FRAT_THUMBNAIL_BUCKET = "https://s3.amazonaws.com/fratroster/frat_thumbnails/"
 	   def static final String COLLEGE_IMAGE_BUCKET = "https://s3.amazonaws.com/fratroster/college_thumbnails/"
 	   def static final String DEFAULT_DESCRIPTION = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultrices purus et pulvinar iaculis. Curabitur vel adipiscing metus, nec venenatis est. Proin sit amet tincidunt ligula."
@@ -319,12 +317,6 @@ class BootStrap {
 		   Environment.executeForCurrentEnvironment {
 			   development {
 				   
-				   def env = System.getenv()
-					//Print all the environment variables.
-					
-					env.each{
-						println it
-					} 
 				   def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
 				   def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
 				   def fBrole = new Role(authority: 'ROLE_FACEBOOK').save(flush: true)
@@ -429,13 +421,6 @@ class BootStrap {
 			   }
 			   
 			   production {
-				   
-				   def env = System.getenv()
-				   //Print all the environment variables.
-				   
-				   env.each{
-					   println it
-				   }
 				   
 				   if(Role.findByAuthority("ROLE_USER") == null) {
 					   def userRole = new Role(authority: 'ROLE_USER').save(flush: true)

@@ -46,21 +46,52 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
+grails.mail.default.from = "support@fratroster.com"
+grails.mail.props = ["mail.smtp.auth":"true", "mail.smtp.socketFactory.port":"465",
+			"mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+			"mail.smtp.socketFactory.fallback":"false"]
 
 environments {
-	
 	development {
-		grails.config.locations = ["file:${userHome}/fratroster/dev-config.groovy"]
+		grails.plugins.springsecurity.portMapper.httpPort = 8080
+		grails.plugins.springsecurity.portMapper.httpsPort = 8443
+		
+		grails.logging.jul.usebridge = true
+		
+		grails.serverURL = "http://localhost:8080/fratRoster"
+		
+		grails.mail.host = "smtp.gmail.com"
+		grails.mail.port = 465
+		
+		grails.config.locations = ["file:${userHome}/.grails/fratroster/dev-config.groovy"]
 	}
 	
 	test {
-		grails.config.locations = ["file:${userHome}/fratroster/test-config.groovy"]
+		grails.plugins.springsecurity.portMapper.httpPort = 8080
+		grails.plugins.springsecurity.portMapper.httpsPort = 8443	
+		
+		grails.logging.jul.usebridge = true
+		
+		grails.serverURL = "http://localhost:8080/fratRoster"
+		
+		grails.mail.host = "smtp.gmail.com"
+		grails.mail.port = 465
+		
+		grails.config.locations = ["file:${userHome}/.grails/fratroster/test-config.groovy"]
 	}
 	
 	production {
-		grails.config.locations = ["file:${userHome}/fratroster/prod-config.groovy"]
+		
+		grails.logging.jul.usebridge=false
+		
+		grails.serverURL="http://fratroster.com"
+		
+		grails.plugin.databasemigration.dbDocController.enabled=true
+		grails.plugin.databasemigration.updateOnStart=true
+		grails.plugin.databasemigration.updateOnStartFileNames=['changelog.groovy']
+		
+		grails.config.locations = ["classpath:fratroster-production-config.properties"]
 	}
-	
 }
 
 // log4j configuration
@@ -96,30 +127,7 @@ grails.plugin.springsecurity.secureChannel.definition = [
 	'/about': 'REQUIRES_INSECURE_CHANNEL',
 	'/login/auth': 'REQUIRES_INSECURE_CHANNEL',
 	'/forgotpassword': 'REQUIRES_INSECURE_CHANNEL',
-	'/**':	'REQUIRES_SECURE_CHANNEL',
+	'/**':	'REQUIRES_SECURE_CHANNEL'
  ]
 
 grails.views.javascript.library="jquery"
-// Uncomment and edit the following lines to start using Grails encoding & escaping improvements
-
-/* remove this line 
-// GSP settings
-grails {
-    views {
-        gsp {
-            encoding = 'UTF-8'
-            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
-            codecs {
-                expression = 'html' // escapes values inside null
-                scriptlet = 'none' // escapes output from scriptlets in GSPs
-                taglib = 'none' // escapes output from taglibs
-                staticparts = 'none' // escapes output from static template parts
-            }
-        }
-        // escapes all not-encoded output at final stage of outputting
-        filteringCodecForContentType {
-            //'text/html' = 'html'
-        }
-    }
-}
-remove this line */

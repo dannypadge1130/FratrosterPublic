@@ -6,22 +6,24 @@ hibernate {
 
 environments {
     development {
-        dataSource {
-            dbCreate = ""
-            driverClassName = ""
-            url = ""
-            username = ""
-            password = ""
-        }
+		dataSource {
+			dbCreate = "create-drop"
+			url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+			pooled = true
+			driverClassName = "org.h2.Driver"
+			username = "sa"
+			password =	""
+		}
 	}
 	
 	test {
 		dataSource {
-			dbCreate = ""
-			driverClassName = ""
-			url = ""
-			username = ""
-			password = ""
+			dbCreate = "create-drop"
+			url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+			pooled = true
+			driverClassName = "org.h2.Driver"
+			username = "sa"
+			password =	""
 		}
 	}
 	
